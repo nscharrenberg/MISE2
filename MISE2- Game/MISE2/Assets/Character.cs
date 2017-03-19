@@ -51,7 +51,6 @@ namespace MISE2.Assets
         // Methods
         public void DrawCharacter(Graphics g)
         {
-            CurrentPosition = new Point(50, 50);
             Rectangle rect = new Rectangle(
                     this.CurrentPosition + new Size(_borderSize * 2, _borderSize * 2),
                     new Size(_borderSize * 4, _borderSize * 4)

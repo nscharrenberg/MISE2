@@ -21,7 +21,14 @@ namespace MISE2
         private void gamePic_Paint(object sender, PaintEventArgs e)
         {
             Character ch = new Character();
+            Player pl = new Player();
+            ch.CurrentPosition = new Point(50, 50);
             ch.DrawCharacter(e.Graphics);
+
+            pl.CurrentPosition = new Point(70, 50);
+            pl.DrawCharacter(e.Graphics);
+
+
         }
     }
 }

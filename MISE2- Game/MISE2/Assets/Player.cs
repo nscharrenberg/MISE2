@@ -44,7 +44,7 @@ namespace MISE2.Assets
             HitPoint = 100;
 
             // Character Color
-            sb = new SolidBrush(Color.OrangeRed);
+            sb = new SolidBrush(Color.DeepSkyBlue);
 
             // Text Alignment
             sf.Alignment = StringAlignment.Center;
