@@ -40,6 +40,7 @@
             this.gamePic.Size = new System.Drawing.Size(486, 389);
             this.gamePic.TabIndex = 0;
             this.gamePic.TabStop = false;
+            this.gamePic.Paint += new System.Windows.Forms.PaintEventHandler(this.gamePic_Paint);
             // 
             // gameFrm
             // 

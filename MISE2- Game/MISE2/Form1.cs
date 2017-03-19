@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MISE2.Assets;
 
 namespace MISE2
 {
@@ -15,6 +16,12 @@ namespace MISE2
         public gameFrm()
         {
             InitializeComponent();
+        }
+
+        private void gamePic_Paint(object sender, PaintEventArgs e)
+        {
+            Character ch = new Character();
+            ch.DrawCharacter(e.Graphics);
         }
     }
 }

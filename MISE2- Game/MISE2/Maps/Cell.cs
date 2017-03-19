@@ -12,9 +12,9 @@ namespace MISE2
     {
         private Point _coordinates;
         private Point _cellPosition;
-        private CellType _cellType;
+        private CellTypes _cellType;
 
-        public CellType CellType
+        public CellTypes CellType
         {
             get { return _cellType; }
             private set { _cellType = value; }
