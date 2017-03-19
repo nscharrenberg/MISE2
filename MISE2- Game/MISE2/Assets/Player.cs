@@ -8,5 +8,12 @@ namespace MISE2.Assets
 {
     class Player
     {
+        private bool _powerUp;
+
+        public bool PowerUp
+        {
+            get { return _powerUp; }
+            private set { _powerUp = value; }
+        }
     }
 }
