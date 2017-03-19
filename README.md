@@ -18,7 +18,7 @@ The World-Class will manage the game. It generates the level, manages the enemie
 It will periodically update the gameworld to keep track of the latest positions of every entity and to refresh and screen.
 
 ## Class Diagram
-![classDiagram](https://github.com/nscharrenberg/MISE2/blob/master/Documents/Class%20Diagram.png "MISE2 - Class Diagram")
+![classDiagram](Documents/Class%20Diagram.png "MISE2 - Class Diagram")
 
 ### Class elucidation
 #### World
