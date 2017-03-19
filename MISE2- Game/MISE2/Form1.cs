@@ -22,12 +22,15 @@ namespace MISE2
         {
             Character ch = new Character();
             Player pl = new Player();
+            Enemy en = new Enemy(new Point(75, 35));
             ch.CurrentPosition = new Point(50, 50);
             ch.DrawCharacter(e.Graphics);
 
             pl.CurrentPosition = new Point(70, 50);
             pl.DrawCharacter(e.Graphics);
 
+            
+            en.DrawCharacter(e.Graphics);
 
         }
     }

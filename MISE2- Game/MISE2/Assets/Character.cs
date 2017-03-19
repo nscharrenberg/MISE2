@@ -18,7 +18,7 @@ namespace MISE2.Assets
         /// </summary>
         private static int _borderSize = 2;
         private Pen pen = new Pen(Color.Black, _borderSize);
-        protected SolidBrush sb = new SolidBrush(Color.Red);
+        protected SolidBrush sb = new SolidBrush(Color.GreenYellow);
         private Font font = new Font("Arial", 10);
         public StringFormat sf = new StringFormat();
 
