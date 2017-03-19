@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -35,6 +36,18 @@ namespace MISE2
         public bool GameWon()
         {
             return true;
+        }
+
+        public void Generate(Size levelSize, Size cellCount, int wp)
+        {
+            this.Level = new Level(levelSize, cellCount, wp);
+            this.Player = new Player();
+        }
+
+        public void DrawWorld(Graphics g)
+        {
+            this.Level.DrawLevel(g);
+            this.Player.DrawCharacter(g);
         }
     }
 }

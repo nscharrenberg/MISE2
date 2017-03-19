@@ -14,18 +14,21 @@ namespace MISE2
 {
     public partial class gameFrm : Form
     {
+        World wrld = new World();
         public gameFrm()
         {
             InitializeComponent();
+            wrld.Generate(gamePic.Size, new Size(10, 10), 10);
         }
 
         private void gamePic_Paint(object sender, PaintEventArgs e)
         {
+            wrld.DrawWorld(e.Graphics);
+
             // Character Design
             Character ch = new Character();
             Player pl = new Player();
             Enemy en = new Enemy(new Point(75, 35));
-            Cell ce = new Cell(new Point(10, 10), new Point(2, 2), new Size(20, 20) );
             // Character
             ch.CurrentPosition = new Point(50, 50);
             ch.DrawCharacter(e.Graphics);
@@ -36,12 +39,6 @@ namespace MISE2
 
             // Enemy
             en.DrawCharacter(e.Graphics);
-
-            ce.CellType = CellTypes.Wall;
-            ce.DrawCell(e.Graphics);
-
-
-
         }
     }
 }
