@@ -6,16 +6,20 @@ using System.Threading.Tasks;
 
 namespace MISE2.Assets.enums
 {
-    class Movement
+    enum Movements
     {
-        enum Movements
-        {
-            StandStill,
-            MoveUp,
-            MoveDown,
-            MoveRight,
-            MoveLeft,
-            Action
-        }
+        StandStill,
+        MoveUp,
+        MoveDown,
+        MoveRight,
+        MoveLeft
     }
+
+    enum CellTypes
+    {
+        Empty,
+        Wall,
+        Exit
+    }
+
 }
