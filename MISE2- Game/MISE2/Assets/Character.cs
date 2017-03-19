@@ -16,7 +16,7 @@ namespace MISE2.Assets
         /// <summary>
         /// Defining the looks of the Characters
         /// </summary>
-        private static int _borderSize = 2;
+        private static int _borderSize = 5;
         private Pen pen = new Pen(Color.Black, _borderSize);
         protected SolidBrush sb = new SolidBrush(Color.GreenYellow);
         private Font font = new Font("Arial", 10);
@@ -58,6 +58,8 @@ namespace MISE2.Assets
 
             g.FillEllipse(this.sb, rect);
             g.DrawEllipse(this.pen, rect);
+            string hitPointToString = Convert.ToString(this.HitPoint);
+            g.DrawString(hitPointToString, this.font, Brushes.Black, rect, this.sf);
         }
     }
 }

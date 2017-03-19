@@ -29,7 +29,6 @@ namespace MISE2
             pl.CurrentPosition = new Point(70, 50);
             pl.DrawCharacter(e.Graphics);
 
-            
             en.DrawCharacter(e.Graphics);
 
         }
