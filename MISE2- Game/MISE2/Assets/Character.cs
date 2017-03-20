@@ -16,10 +16,10 @@ namespace MISE2.Assets
         /// <summary>
         /// Defining the looks of the Characters
         /// </summary>
-        private static int _borderSize = 5;
+        private static int _borderSize = 2;
         private Pen pen = new Pen(Color.Black, _borderSize);
         protected SolidBrush sb = new SolidBrush(Color.GreenYellow);
-        private Font font = new Font("Arial", 10);
+        private Font font = new Font("Arial", 6);
         public StringFormat sf = new StringFormat();
 
         // Accessors
@@ -53,7 +53,7 @@ namespace MISE2.Assets
         {
             Rectangle rect = new Rectangle(
                     this.CurrentPosition + new Size(_borderSize * 2, _borderSize * 2),
-                    new Size(_borderSize * 4, _borderSize * 4)
+                    World.NewWorld.Level.CellSize - new Size(_borderSize * 4, _borderSize * 4)
                 );
 
             g.FillEllipse(this.sb, rect);

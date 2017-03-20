@@ -24,6 +24,7 @@ namespace MISE2
         {
             World.NewWorld.DrawWorld(e.Graphics);
 
+            /* DUMMY DATA
             // Character Design
             Character ch = new Character();
             Player pl = new Player();
@@ -38,6 +39,7 @@ namespace MISE2
 
             // Enemy
             en.DrawCharacter(e.Graphics);
+            */
         }
     }
 }

@@ -37,7 +37,7 @@
             this.gamePic.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gamePic.Location = new System.Drawing.Point(0, 0);
             this.gamePic.Name = "gamePic";
-            this.gamePic.Size = new System.Drawing.Size(254, 220);
+            this.gamePic.Size = new System.Drawing.Size(327, 305);
             this.gamePic.TabIndex = 0;
             this.gamePic.TabStop = false;
             this.gamePic.Paint += new System.Windows.Forms.PaintEventHandler(this.gamePic_Paint);
@@ -46,7 +46,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(254, 220);
+            this.ClientSize = new System.Drawing.Size(327, 305);
             this.Controls.Add(this.gamePic);
             this.Name = "gameFrm";
             this.Text = "MISE2";
