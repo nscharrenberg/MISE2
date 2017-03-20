@@ -14,6 +14,19 @@ namespace MISE2
         private Level _level;
         private Player _player;
         private List<Enemy> _enemies;
+        public static World newWorld;
+
+        public static World NewWorld
+        {
+            get
+            {
+                if (World.newWorld == null)
+                {
+                    World.newWorld = new World();
+                }
+                return World.newWorld;
+            }
+        }
 
         public List<Enemy> Enemies
         {
@@ -37,6 +50,8 @@ namespace MISE2
         {
             return true;
         }
+
+        
 
         public void Generate(Size levelSize, Size cellCount, int wp)
         {

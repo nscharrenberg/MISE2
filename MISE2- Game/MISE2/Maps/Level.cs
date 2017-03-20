@@ -36,6 +36,9 @@ namespace MISE2
                     this._cells[i].CellType = CellTypes.Wall;
                 }
             }
+
+            // add Exit point at the opposite side of the Level.
+            this._cells[this._cells.Length - 1].CellType = CellTypes.Exit;
         }
 
         // Accessor
@@ -91,6 +94,22 @@ namespace MISE2
             Point coordinates = this.PositionToCoordinates(position);
             int coordinatesArray = (coordinates.Y * this._cellCount.Width) + coordinates.X;
             return this._cells[coordinatesArray].CellType;
+        }
+
+        public Point EmptySpace()
+        {
+            Point randPosition = new Point();
+            while (randPosition.Equals(World.NewWorld.Player.CurrentPosition) ||
+                   this.CelltypePosition(randPosition) == CellTypes.Wall)
+            {
+                Random rand = new Random();
+                randPosition = this.CoordinatesToPosition(new Point(
+                    rand.Next(this.CellCount.Width),
+                    rand.Next(this.CellCount.Height)
+                ));
+            }
+
+            return randPosition;
         }
     }
 }
