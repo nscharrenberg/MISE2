@@ -52,14 +52,14 @@ namespace MISE2
             private set { _level = value; }
         }
 
-        public bool GameWon()
+        public bool GameWon
         {
-            return false;
+            get { return this.Player.CurrentPosition.Equals(this.Level.ExitPoint); }
         }
 
-        public bool GameLose()
+        public bool GameLose
         {
-            return false;
+            get { return this.Player.HitPoint == 0; }
         }
 
         public void Generate(Size levelSize, Size cellCount, int wp)

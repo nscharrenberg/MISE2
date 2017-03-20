@@ -53,16 +53,17 @@ namespace MISE2
             gamePic.Refresh();
             
 
-            if (World.NewWorld.GameWon())
-            {
-                gameTimer.Enabled = false;
-                MessageBox.Show("You Won!");
-                GameInfo();
-            }
-            if (World.NewWorld.GameLose())
+            
+            if (World.NewWorld.GameLose)
             {
                 gameTimer.Enabled = false;
                 MessageBox.Show("Game Over!");
+                GameInfo();
+            }
+            if (World.NewWorld.GameWon)
+            {
+                gameTimer.Enabled = false;
+                MessageBox.Show("You Won!");
                 GameInfo();
             }
         }

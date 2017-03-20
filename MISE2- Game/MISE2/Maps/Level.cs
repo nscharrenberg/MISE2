@@ -44,8 +44,19 @@ namespace MISE2
         // Accessor
         public Point ExitPoint
         {
-            get { return _exitPoint; }
-            private set { _exitPoint = value; }
+            get
+            {
+                foreach (Cell cell in _cells)
+                {
+                    if (cell.CellType == CellTypes.Exit)
+                    {
+                        return cell.CellPosition;
+                    }
+                }
+
+                return new Point(0, 0);
+            }
+
         }
 
         public Size CellCount
@@ -84,8 +95,8 @@ namespace MISE2
         {
             Size s = this._cellSize;
             return new Point(
-                (position.X - (position.X / s.Width)) / s.Width,
-                (position.Y - (position.Y / s.Height)) / s.Height
+                (position.X - (position.X % s.Width)) / s.Width,
+                (position.Y - (position.Y % s.Height)) / s.Height
                 );
         }
 
