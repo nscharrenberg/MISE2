@@ -54,12 +54,12 @@ namespace MISE2
 
         public bool GameWon()
         {
-            return true;
+            return false;
         }
 
         public bool GameLose()
         {
-            return true;
+            return false;
         }
 
         public void Generate(Size levelSize, Size cellCount, int wp)
@@ -72,6 +72,11 @@ namespace MISE2
         {
             this.Level.DrawLevel(g);
             this.Player.DrawCharacter(g);
+        }
+
+        public void UpdateWorld()
+        {
+            this.Player.UpdatePlayer();
         }
     }
 }

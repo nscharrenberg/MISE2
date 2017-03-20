@@ -49,7 +49,9 @@ namespace MISE2
 
         private void gameTimer_Tick(object sender, EventArgs e)
         {
+            World.NewWorld.UpdateWorld();
             gamePic.Refresh();
+            
 
             if (World.NewWorld.GameWon())
             {
@@ -63,6 +65,11 @@ namespace MISE2
                 MessageBox.Show("Game Over!");
                 GameInfo();
             }
+        }
+
+        private void gameFrm_KeyDown(object sender, KeyEventArgs e)
+        {
+            World.NewWorld.Player.MovementKeys(e.KeyCode);
         }
     }
 }

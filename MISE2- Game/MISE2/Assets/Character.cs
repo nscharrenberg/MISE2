@@ -4,6 +4,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MISE2.Assets.enums;
 
 namespace MISE2.Assets
 {
@@ -60,6 +61,42 @@ namespace MISE2.Assets
             g.DrawEllipse(this.pen, rect);
             string hitPointToString = Convert.ToString(this.HitPoint);
             g.DrawString(hitPointToString, this.font, Brushes.Black, rect, this.sf);
+        }
+
+        public Point UpdateCharacter(Point position, Movements movement)
+        {
+            Size levelSize = World.NewWorld.Level.LevelSize;
+            Size cellSize = World.NewWorld.Level.CellSize;
+            Point updatedPosition = position;
+
+            if (movement == Movements.MoveUp)
+            {
+                updatedPosition.Offset(0, cellSize.Height * -1);
+            } else if (movement == Movements.MoveDown)
+            {
+                updatedPosition.Offset(0, cellSize.Height * 1);
+            } else if (movement == Movements.MoveRight)
+            {
+                updatedPosition.Offset(cellSize.Width * 1, 0);
+            } else if (movement == Movements.MoveLeft)
+            {
+                updatedPosition.Offset(cellSize.Width * -1, 0);
+            }
+
+            // Check if within Level
+            if (updatedPosition.X < 0 || updatedPosition.X > levelSize.Width - cellSize.Width || updatedPosition.Y < 0 ||
+                updatedPosition.Y > levelSize.Height - cellSize.Height)
+            {
+                return position;
+            }
+
+            // Check if cell is a Wall
+            if (World.NewWorld.Level.CelltypePosition(updatedPosition) == CellTypes.Wall)
+            {
+                return position;
+            }
+
+            return updatedPosition;
         }
     }
 }

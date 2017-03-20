@@ -71,5 +71,10 @@ namespace MISE2.Assets
                 this.currentMovements = Movements.StandStill;
             }
         }
+
+        public void UpdatePlayer()
+        {
+            CurrentPosition = UpdateCharacter(CurrentPosition, CurrentMovements);
+        }
     }
 }

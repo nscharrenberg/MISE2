@@ -46,6 +46,8 @@
             // 
             // gameTimer
             // 
+            this.gameTimer.Enabled = true;
+            this.gameTimer.Interval = 12;
             this.gameTimer.Tick += new System.EventHandler(this.gameTimer_Tick);
             // 
             // gameFrm
@@ -56,6 +58,7 @@
             this.Controls.Add(this.gamePic);
             this.Name = "gameFrm";
             this.Text = "MISE2";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.gameFrm_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.gamePic)).EndInit();
             this.ResumeLayout(false);
 
