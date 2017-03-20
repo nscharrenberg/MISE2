@@ -14,16 +14,15 @@ namespace MISE2
 {
     public partial class gameFrm : Form
     {
-        World wrld = new World();
         public gameFrm()
         {
             InitializeComponent();
-            wrld.Generate(gamePic.Size, new Size(10, 10), 10);
+            World.NewWorld.Generate(gamePic.Size, new Size(10, 10), 10);
         }
 
         private void gamePic_Paint(object sender, PaintEventArgs e)
         {
-            wrld.DrawWorld(e.Graphics);
+            World.NewWorld.DrawWorld(e.Graphics);
 
             // Character Design
             Character ch = new Character();

@@ -14,7 +14,7 @@ namespace MISE2
         private Level _level;
         private Player _player;
         private List<Enemy> _enemies;
-        public static World newWorld;
+        private static World newWorld;
 
         public static World NewWorld
         {
