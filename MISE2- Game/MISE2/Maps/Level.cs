@@ -30,8 +30,7 @@ namespace MISE2
                 Point coordinates = new Point(i % _cellCount.Width,i / _cellCount.Width);
                 this._cells[i] = new Cell(coordinates, this.CoordinatesToPosition(coordinates), this._cellSize);
 
-                Random rand = new Random();
-                if (i > 0 && rand.Next(100) <= wp)
+                if (i > 0 && Randomize.Next(100) <= wp)
                 {
                     this._cells[i].CellType = CellTypes.Wall;
                 }
