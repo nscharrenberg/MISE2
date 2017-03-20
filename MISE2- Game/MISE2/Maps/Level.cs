@@ -54,6 +54,7 @@ namespace MISE2
                     }
                 }
 
+                // Exception - Should never happen as there is always 1 ExitPoint
                 return new Point(0, 0);
             }
 
