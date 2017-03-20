@@ -17,6 +17,11 @@ namespace MISE2
         public gameFrm()
         {
             InitializeComponent();
+            GameInfo();
+        }
+
+        private void GameInfo()
+        {
             World.NewWorld.Generate(gamePic.Size, new Size(10, 10), 10);
         }
 
@@ -40,6 +45,24 @@ namespace MISE2
             // Enemy
             en.DrawCharacter(e.Graphics);
             */
+        }
+
+        private void gameTimer_Tick(object sender, EventArgs e)
+        {
+            gamePic.Refresh();
+
+            if (World.NewWorld.GameWon())
+            {
+                gameTimer.Enabled = false;
+                MessageBox.Show("You Won!");
+                GameInfo();
+            }
+            if (World.NewWorld.GameLose())
+            {
+                gameTimer.Enabled = false;
+                MessageBox.Show("Game Over!");
+                GameInfo();
+            }
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -15,6 +16,11 @@ namespace MISE2
         private Player _player;
         private List<Enemy> _enemies;
         private static World newWorld;
+        private Stopwatch _stopWatch = new Stopwatch();
+        public long StopWatch
+        {
+            get { return this._stopWatch.ElapsedMilliseconds; }
+        }
 
         public static World NewWorld
         {
@@ -51,7 +57,10 @@ namespace MISE2
             return true;
         }
 
-        
+        public bool GameLose()
+        {
+            return true;
+        }
 
         public void Generate(Size levelSize, Size cellCount, int wp)
         {
