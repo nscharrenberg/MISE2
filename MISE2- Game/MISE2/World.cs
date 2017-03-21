@@ -92,6 +92,11 @@ namespace MISE2
         public void UpdateWorld()
         {
             this.Player.UpdatePlayer();
+
+            foreach (var enemy in _enemies)
+            {
+                enemy.UpdateEnemy();
+            }
         }
     }
 }
