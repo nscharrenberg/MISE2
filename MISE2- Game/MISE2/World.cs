@@ -5,7 +5,9 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using MISE2.Assets;
+using MISE2.Assets.enums;
 
 namespace MISE2
 {
@@ -100,6 +102,15 @@ namespace MISE2
                 if (this.Player.CurrentPosition.Equals(enemy.CurrentPosition))
                 {
                     this.Player.HitPoint -= 5;
+                    enemy.HitPoint -= 50;
+                }
+            }
+
+            for (int i = _enemies.Count - 1; i >= 0; i--)
+            {
+                if (_enemies[i].HitPoint == 0)
+                {
+                    _enemies.RemoveAt(i);
                 }
             }
         }

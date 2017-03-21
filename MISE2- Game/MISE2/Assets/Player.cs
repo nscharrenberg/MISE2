@@ -66,6 +66,10 @@ namespace MISE2.Assets
             {
                 this.currentMovements = Movements.MoveLeft;
             }
+            else if (keys == Keys.Space || keys == Keys.Control)
+            {
+                this.currentMovements = Movements.Attack;
+            }
             else
             {
                 this.currentMovements = Movements.StandStill;

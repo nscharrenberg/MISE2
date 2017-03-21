@@ -43,6 +43,5 @@ namespace MISE2.Assets
 
             }
         }
-
     }
 }

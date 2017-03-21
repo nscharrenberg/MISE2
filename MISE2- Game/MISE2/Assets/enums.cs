@@ -12,7 +12,8 @@ namespace MISE2.Assets.enums
         MoveUp,
         MoveDown,
         MoveRight,
-        MoveLeft
+        MoveLeft,
+        Attack
     }
 
     enum CellTypes
