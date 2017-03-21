@@ -20,5 +20,6 @@ namespace MISE2.Assets
             sf.Alignment = StringAlignment.Center;
             sf.LineAlignment = StringAlignment.Center;
         }
+
     }
 }

@@ -14,7 +14,8 @@ namespace MISE2
         // Properties
         private Level _level;
         private Player _player;
-        private List<Enemy> _enemies;
+        private Enemy _enemy;
+        private List<Enemy> _enemies = new List<Enemy>();
         private static World newWorld;
         private Stopwatch _stopWatch = new Stopwatch();
         public long StopWatch
@@ -34,11 +35,11 @@ namespace MISE2
             }
         }
 
-        public List<Enemy> Enemies
+        public Enemy AnEnemy
         {
-            get { return _enemies; }
-            private set { _enemies = value; }
-        }
+            get {  return _enemy; }
+            private set { _enemy = value; }
+        } 
 
         public Player Player
         {
@@ -64,14 +65,28 @@ namespace MISE2
 
         public void Generate(Size levelSize, Size cellCount, int wp)
         {
+            this._stopWatch.Start();
             this.Level = new Level(levelSize, cellCount, wp);
             this.Player = new Player();
+
+            // Draw Enemies
+            int aantal = 5;
+            for (int i = 0; i < aantal; i++)
+            {
+                _enemies.Add(new Enemy(World.NewWorld.Level.EmptySpace()));
+                Console.WriteLine(World.newWorld.Level.EmptySpace());
+            }
         }
 
         public void DrawWorld(Graphics g)
         {
             this.Level.DrawLevel(g);
             this.Player.DrawCharacter(g);
+
+            foreach (Enemy enemy in _enemies)
+            {
+                enemy.DrawCharacter(g);
+            }
         }
 
         public void UpdateWorld()

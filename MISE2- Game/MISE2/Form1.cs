@@ -52,25 +52,28 @@ namespace MISE2
             World.NewWorld.UpdateWorld();
             gamePic.Refresh();
             
-
-            
             if (World.NewWorld.GameLose)
             {
                 gameTimer.Enabled = false;
                 MessageBox.Show("Game Over!");
-                GameInfo();
+                Application.Restart();
             }
             if (World.NewWorld.GameWon)
             {
                 gameTimer.Enabled = false;
                 MessageBox.Show("You Won!");
-                GameInfo();
+                Application.Restart();
             }
         }
 
         private void gameFrm_KeyDown(object sender, KeyEventArgs e)
         {
             World.NewWorld.Player.MovementKeys(e.KeyCode);
+        }
+
+        private void newGameToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Restart();
         }
     }
 }

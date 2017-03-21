@@ -114,10 +114,10 @@ namespace MISE2
             while (randPosition.Equals(World.NewWorld.Player.CurrentPosition) ||
                    this.CelltypePosition(randPosition) == CellTypes.Wall)
             {
-                Random rand = new Random();
+                
                 randPosition = this.CoordinatesToPosition(new Point(
-                    rand.Next(this.CellCount.Width),
-                    rand.Next(this.CellCount.Height)
+                    Randomize.Next(this.CellCount.Width),
+                    Randomize.Next(this.CellCount.Height)
                 ));
             }
 
