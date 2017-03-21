@@ -96,6 +96,11 @@ namespace MISE2
             foreach (var enemy in _enemies)
             {
                 enemy.UpdateEnemy();
+
+                if (this.Player.CurrentPosition.Equals(enemy.CurrentPosition))
+                {
+                    this.Player.HitPoint -= 5;
+                }
             }
         }
     }
