@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -18,6 +19,7 @@ namespace MISE2
         private Player _player;
         private Enemy _enemy;
         private List<Enemy> _enemies = new List<Enemy>();
+        private List<Enemy> _killedEnemies = new List<Enemy>();
         private static World newWorld;
         private Stopwatch _stopWatch = new Stopwatch();
         public long StopWatch
@@ -37,6 +39,10 @@ namespace MISE2
             }
         }
 
+        public int KilledEnemies
+        {
+            get { return _killedEnemies.Count(); }
+        }
         public Enemy AnEnemy
         {
             get {  return _enemy; }
@@ -68,6 +74,7 @@ namespace MISE2
         public void Generate(Size levelSize, Size cellCount, int wp)
         {
             this._stopWatch.Start();
+            
             this.Level = new Level(levelSize, cellCount, wp);
             this.Player = new Player();
 
@@ -111,6 +118,7 @@ namespace MISE2
                 if (_enemies[i].HitPoint == 0)
                 {
                     _enemies.RemoveAt(i);
+                    _killedEnemies.Add(new Enemy(World.NewWorld.Level.EmptySpace()));
                 }
             }
         }

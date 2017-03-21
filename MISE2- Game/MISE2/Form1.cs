@@ -51,17 +51,18 @@ namespace MISE2
         {
             World.NewWorld.UpdateWorld();
             gamePic.Refresh();
-            
+            int ate = World.NewWorld.KilledEnemies;
             if (World.NewWorld.GameLose)
             {
                 gameTimer.Enabled = false;
-                MessageBox.Show("Game Over!");
+                
+                MessageBox.Show("Game Over! /r You Killed " + ate + " Enemies!");
                 Application.Restart();
             }
             if (World.NewWorld.GameWon)
             {
                 gameTimer.Enabled = false;
-                MessageBox.Show("You Won!");
+                MessageBox.Show("You Won! /r You Killed " + ate + " Enemies!");
                 Application.Restart();
             }
         }
