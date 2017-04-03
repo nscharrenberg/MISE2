@@ -22,7 +22,7 @@ namespace MISE2
 
         private void GameInfo()
         {
-            World.NewWorld.Generate(gamePic.Size, new Size(10, 10), 10);
+            World.NewWorld.Generate(gamePic.Size, new Size(30, 30), 10);
         }
 
         private void gamePic_Paint(object sender, PaintEventArgs e)
