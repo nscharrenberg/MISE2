@@ -126,7 +126,7 @@ namespace MISE2
                     }
                     else
                     {
-                        int dmg = Player.Armor - 2;
+                        int dmg = Player.Armor - 5;
                         this.Player.HitPoint -= dmg;
                     }
 
@@ -149,7 +149,7 @@ namespace MISE2
                 if (this.Player.CurrentPosition.Equals(armor.Position))
                 {
                     Player.items.Add(armor);
-                    Player.Armor += armor.Armor;
+                    Player.HitPoint += armor.Armor;
                     items.Remove(armor);
                     return;
                 }

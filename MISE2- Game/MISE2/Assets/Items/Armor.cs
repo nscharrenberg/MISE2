@@ -13,7 +13,7 @@ namespace MISE2.Assets.Items
         {
             this.Position = position;
             this.Name = "Armor";
-            this.Armor = 5;
+            this.Armor = 10;
         }
     }
 }

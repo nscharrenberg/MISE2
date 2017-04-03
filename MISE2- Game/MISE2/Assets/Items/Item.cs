@@ -22,5 +22,10 @@ namespace MISE2.Assets.Items
             g.DrawEllipse(Pens.Green, rect);
             g.DrawString(Name, new Font("Arial", 8), Brushes.White, rect, new StringFormat());
         }
+
+        public Point GetPosition()
+        {
+            return Position;
+        }
     }
 }
