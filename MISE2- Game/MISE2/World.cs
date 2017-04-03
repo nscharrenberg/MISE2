@@ -109,7 +109,7 @@ namespace MISE2
                 {
                     this.Player.HitPoint -= 5;
 
-                    enemy.HitPoint -= 50;
+                    enemy.HitPoint -= 20;
                 }
             }
 
