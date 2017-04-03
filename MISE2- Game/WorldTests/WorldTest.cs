@@ -21,28 +21,28 @@ namespace WorldTests
          */
         private static void Generate()
         {
-            World.NewWorld.Generate(new Size(50, 50), new Size(10, 10), 10);
+            World.Instance.Generate(new Size(50, 50), new Size(10, 10), 10);
         }
 
         private void GenerateAllWalls()
         {
             // Wall Percentage 100%
-            World.NewWorld.Generate(new Size(50, 50), new Size(10, 10), 100);
+            World.Instance.Generate(new Size(50, 50), new Size(10, 10), 100);
         }
 
         private void GenerateNoWalls()
         {
             // Wall Percentage 100%
-            World.NewWorld.Generate(new Size(20, 10), new Size(10, 10), 0);
+            World.Instance.Generate(new Size(20, 10), new Size(10, 10), 0);
         }
 
         [TestMethod]
         public void WorldGenerate()
         {
-            World.NewWorld.Generate(new Size(40, 60), new Size(5, 7), 0);
+            World.Instance.Generate(new Size(40, 60), new Size(5, 7), 0);
 
             // Exit Point & Spawn Point can't be the same
-            Assert.AreNotEqual(World.NewWorld.Player.CurrentPosition, World.NewWorld.Level.ExitPoint);
+            Assert.AreNotEqual(World.Instance.Player.CurrentPosition, World.Instance.Level.ExitPoint);
         }
 
         [TestMethod]
@@ -50,13 +50,13 @@ namespace WorldTests
         {
             GenerateNoWalls();
             // Game Won is by Default False
-            Assert.IsFalse(World.NewWorld.GameWon);
+            Assert.IsFalse(World.Instance.GameWon);
 
             // Game Won is set to True when player gets to the exit point.
-            World.NewWorld.Player.MovementKeys(Keys.D);
-            World.NewWorld.UpdateWorld();
+            World.Instance.Player.MovementKeys(Keys.D);
+            World.Instance.UpdateWorld();
             
-            Assert.IsTrue(World.NewWorld.GameWon);
+            Assert.IsTrue(World.Instance.GameWon);
         }
 
         /*

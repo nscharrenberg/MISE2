@@ -55,7 +55,7 @@ namespace MISE2.Assets
         {
             Rectangle rect = new Rectangle(
                     this.CurrentPosition + new Size(_borderSize * 2, _borderSize * 2),
-                    World.NewWorld.Level.CellSize - new Size(_borderSize * 4, _borderSize * 4)
+                    World.Instance.Level.CellSize - new Size(_borderSize * 4, _borderSize * 4)
                 );
 
             g.FillEllipse(this.sb, rect);
@@ -66,8 +66,8 @@ namespace MISE2.Assets
 
         public Point UpdateCharacter(Point position, Movements movement)
         {
-            Size levelSize = World.NewWorld.Level.LevelSize;
-            Size cellSize = World.NewWorld.Level.CellSize;
+            Size levelSize = World.Instance.Level.LevelSize;
+            Size cellSize = World.Instance.Level.CellSize;
             Point updatedPosition = position;
 
             if (movement == Movements.MoveUp)
@@ -92,7 +92,7 @@ namespace MISE2.Assets
             }
 
             // Check if cell is a Wall
-            if (World.NewWorld.Level.CelltypePosition(updatedPosition) == CellTypes.Wall)
+            if (World.Instance.Level.CelltypePosition(updatedPosition) == CellTypes.Wall)
             {
                 return position;
             }

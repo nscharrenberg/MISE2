@@ -110,7 +110,7 @@ namespace MISE2
         public Point EmptySpace()
         {
             Point randPosition = new Point();
-            while (randPosition.Equals(World.NewWorld.Player.CurrentPosition) ||
+            while (randPosition.Equals(World.Instance.Player.CurrentPosition) ||
                    this.CelltypePosition(randPosition) == CellTypes.Wall)
             {
                 

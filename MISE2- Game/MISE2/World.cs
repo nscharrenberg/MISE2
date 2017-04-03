@@ -29,7 +29,8 @@ namespace MISE2
             get { return this._stopWatch.ElapsedMilliseconds; }
         }
 
-        public static World NewWorld
+        // Singleton
+        public static World Instance
         {
             get
             {
@@ -84,7 +85,7 @@ namespace MISE2
             int aantal = 5;
             for (int i = 0; i < aantal; i++)
             {
-                _enemies.Add(new Enemy(World.NewWorld.Level.EmptySpace()));
+                _enemies.Add(new Enemy(World.Instance.Level.EmptySpace()));
             }
 
             items.Add(new Armor(World.newWorld.Level.EmptySpace()));
@@ -138,7 +139,7 @@ namespace MISE2
                 if (_enemies[i].HitPoint == 0)
                 {
                     _enemies.RemoveAt(i);
-                    _killedEnemies.Add(new Enemy(World.NewWorld.Level.EmptySpace()));
+                    _killedEnemies.Add(new Enemy(World.Instance.Level.EmptySpace()));
                 }
             }
 

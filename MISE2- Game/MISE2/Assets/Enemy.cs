@@ -26,7 +26,7 @@ namespace MISE2.Assets
 
         public void UpdateEnemy()
         {
-            if (World.NewWorld.StopWatch - this.previousMove >= this.delay)
+            if (World.Instance.StopWatch - this.previousMove >= this.delay)
             {
                 Movements[] moves = new Movements[5]
                 {
@@ -39,7 +39,7 @@ namespace MISE2.Assets
                 Movements movements = moves[Randomize.Next(moves.Length)];
 
                 this.CurrentPosition = UpdateCharacter(this.CurrentPosition, movements);
-                this.previousMove = World.NewWorld.StopWatch;
+                this.previousMove = World.Instance.StopWatch;
 
             }
         }

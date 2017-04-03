@@ -16,7 +16,7 @@ namespace MISE2.Assets.Items
         {
             Rectangle rect = new Rectangle(
                 this.Position + new Size(2 * 2, 2 * 2),
-                World.NewWorld.Level.CellSize - new Size(2 * 4, 2 * 4)
+                World.Instance.Level.CellSize - new Size(2 * 4, 2 * 4)
                 );
             g.FillEllipse(Brushes.Green, rect);
             g.DrawEllipse(Pens.Green, rect);

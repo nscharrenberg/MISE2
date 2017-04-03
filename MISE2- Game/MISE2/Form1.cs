@@ -22,12 +22,12 @@ namespace MISE2
 
         private void GameInfo()
         {
-            World.NewWorld.Generate(gamePic.Size, new Size(30, 30), 10);
+            World.Instance.Generate(gamePic.Size, new Size(30, 30), 10);
         }
 
         private void gamePic_Paint(object sender, PaintEventArgs e)
         {
-            World.NewWorld.DrawWorld(e.Graphics);
+            World.Instance.DrawWorld(e.Graphics);
 
             /* DUMMY DATA
             // Character Design
@@ -49,17 +49,17 @@ namespace MISE2
 
         private void gameTimer_Tick(object sender, EventArgs e)
         {
-            World.NewWorld.UpdateWorld();
+            World.Instance.UpdateWorld();
             gamePic.Refresh();
-            int ate = World.NewWorld.KilledEnemies;
-            if (World.NewWorld.GameLose)
+            int ate = World.Instance.KilledEnemies;
+            if (World.Instance.GameLose)
             {
                 gameTimer.Enabled = false;
                 
                 MessageBox.Show("Game Over! /r You Killed " + ate + " Enemies!");
                 Application.Restart();
             }
-            if (World.NewWorld.GameWon)
+            if (World.Instance.GameWon)
             {
                 gameTimer.Enabled = false;
                 MessageBox.Show("You Won! /r You Killed " + ate + " Enemies!");
@@ -69,7 +69,7 @@ namespace MISE2
 
         private void gameFrm_KeyDown(object sender, KeyEventArgs e)
         {
-            World.NewWorld.Player.MovementKeys(e.KeyCode);
+            World.Instance.Player.MovementKeys(e.KeyCode);
         }
 
         private void newGameToolStripMenuItem_Click(object sender, EventArgs e)
