@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MISE2.Assets;
 using MISE2.Assets.enums;
+using MISE2.Assets.Items;
 
 namespace MISE2
 {
@@ -22,6 +23,7 @@ namespace MISE2
         private List<Enemy> _killedEnemies = new List<Enemy>();
         private static World newWorld;
         private Stopwatch _stopWatch = new Stopwatch();
+        public List<ICarryable> items = new List<ICarryable>();
         public long StopWatch
         {
             get { return this._stopWatch.ElapsedMilliseconds; }
@@ -84,6 +86,11 @@ namespace MISE2
             {
                 _enemies.Add(new Enemy(World.NewWorld.Level.EmptySpace()));
             }
+
+            items.Add(new Armor(World.newWorld.Level.EmptySpace()));
+            items.Add(new Armor(World.newWorld.Level.EmptySpace()));
+            items.Add(new Armor(World.newWorld.Level.EmptySpace()));
+            items.Add(new Armor(World.newWorld.Level.EmptySpace()));
         }
 
         public void DrawWorld(Graphics g)
@@ -94,6 +101,11 @@ namespace MISE2
             foreach (Enemy enemy in _enemies)
             {
                 enemy.DrawCharacter(g);
+            }
+
+            foreach (var item in items)
+            {
+                item.Draw(g);
             }
         }
 
@@ -107,7 +119,15 @@ namespace MISE2
 
                 if (this.Player.CurrentPosition.Equals(enemy.CurrentPosition))
                 {
-                    this.Player.HitPoint -= 5;
+                    if (Player.Armor == 0)
+                    {
+                        this.Player.HitPoint -= 5;
+                    }
+                    else
+                    {
+                        int dmg = Player.Armor - 2;
+                        this.Player.HitPoint -= dmg;
+                    }
 
                     enemy.HitPoint -= 20;
                 }
@@ -119,6 +139,18 @@ namespace MISE2
                 {
                     _enemies.RemoveAt(i);
                     _killedEnemies.Add(new Enemy(World.NewWorld.Level.EmptySpace()));
+                }
+            }
+
+            // Items
+            foreach (var armor in items)
+            {
+                if (this.Player.CurrentPosition.Equals(armor.Position))
+                {
+                    Player.items.Add(armor);
+                    Player.Armor += armor.Armor;
+                    items.Remove(armor);
+                    return;
                 }
             }
         }

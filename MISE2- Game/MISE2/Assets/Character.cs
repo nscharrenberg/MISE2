@@ -13,6 +13,7 @@ namespace MISE2.Assets
         // Properties
         private Point _currentPosition;
         private int _hitPoint;
+        public List<ICarryable> items = new List<ICarryable>();
 
         /// <summary>
         /// Defining the looks of the Characters

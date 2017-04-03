@@ -49,6 +49,9 @@
     <Compile Include="Assets\Character.cs" />
     <Compile Include="Assets\Enemy.cs" />
     <Compile Include="Assets\enums.cs" />
+    <Compile Include="Assets\ICarryable.cs" />
+    <Compile Include="Assets\Items\Armor.cs" />
+    <Compile Include="Assets\Items\Item.cs" />
     <Compile Include="Assets\Player.cs" />
     <Compile Include="Maps\Cell.cs" />
     <Compile Include="Form1.cs">

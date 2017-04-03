@@ -13,6 +13,7 @@ namespace MISE2.Assets
     {
         private bool _powerUp;
         private Movements currentMovements = Movements.StandStill;
+        public int Armor = 0;
 
         public bool PowerUp
         {
