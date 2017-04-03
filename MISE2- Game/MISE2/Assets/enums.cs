@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MISE2.Assets.enums
 {
-    enum Movements
+    public enum Movements
     {
         StandStill,
         MoveUp,
@@ -16,7 +16,7 @@ namespace MISE2.Assets.enums
         Attack
     }
 
-    enum CellTypes
+    public enum CellTypes
     {
         Empty,
         Wall,

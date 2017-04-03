@@ -42,7 +42,7 @@
             this.gamePic.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gamePic.Location = new System.Drawing.Point(0, 24);
             this.gamePic.Name = "gamePic";
-            this.gamePic.Size = new System.Drawing.Size(327, 281);
+            this.gamePic.Size = new System.Drawing.Size(445, 366);
             this.gamePic.TabIndex = 0;
             this.gamePic.TabStop = false;
             this.gamePic.Paint += new System.Windows.Forms.PaintEventHandler(this.gamePic_Paint);
@@ -59,7 +59,7 @@
             this.newGameToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(327, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(445, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -74,7 +74,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(327, 305);
+            this.ClientSize = new System.Drawing.Size(445, 390);
             this.Controls.Add(this.gamePic);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;

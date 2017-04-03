@@ -8,7 +8,7 @@ using MISE2.Assets.enums;
 
 namespace MISE2.Assets
 {
-    class Character
+    public class Character
     {
         // Properties
         private Point _currentPosition;

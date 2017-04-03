@@ -9,7 +9,7 @@ using MISE2.Assets.enums;
 
 namespace MISE2
 {
-    class Cell
+    public class Cell
     {
         // Properties
         private Point _coordinates;

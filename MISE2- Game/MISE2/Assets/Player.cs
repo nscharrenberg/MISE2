@@ -9,7 +9,7 @@ using MISE2.Assets.enums;
 
 namespace MISE2.Assets
 {
-    class Player : Character
+    public class Player : Character
     {
         private bool _powerUp;
         private Movements currentMovements = Movements.StandStill;
@@ -49,6 +49,11 @@ namespace MISE2.Assets
             // Text Alignment
             sf.Alignment = StringAlignment.Center;
             sf.LineAlignment = StringAlignment.Center;
+        }
+
+        public void MovementKeys(object w)
+        {
+            throw new NotImplementedException();
         }
 
         public void MovementKeys(Keys keys)

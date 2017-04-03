@@ -8,7 +8,7 @@ using MISE2.Assets.enums;
 
 namespace MISE2.Assets
 {
-    class Enemy : Character
+    public class Enemy : Character
     {
         private int delay = 200;
         private long previousMove;

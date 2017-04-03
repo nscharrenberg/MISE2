@@ -12,7 +12,7 @@ using MISE2.Assets.enums;
 
 namespace MISE2
 {
-    class World
+    public class World
     {
         // Properties
         private Level _level;
@@ -83,7 +83,6 @@ namespace MISE2
             for (int i = 0; i < aantal; i++)
             {
                 _enemies.Add(new Enemy(World.NewWorld.Level.EmptySpace()));
-                Console.WriteLine(World.newWorld.Level.EmptySpace());
             }
         }
 
@@ -109,6 +108,7 @@ namespace MISE2
                 if (this.Player.CurrentPosition.Equals(enemy.CurrentPosition))
                 {
                     this.Player.HitPoint -= 5;
+
                     enemy.HitPoint -= 50;
                 }
             }

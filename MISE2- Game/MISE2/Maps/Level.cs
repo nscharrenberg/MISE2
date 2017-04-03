@@ -9,13 +9,12 @@ using MISE2.Assets.enums;
 
 namespace MISE2
 {
-    class Level
+    public class Level
     {
         // Property
         private Size _levelSize;
         private Size _cellSize;
         private Size _cellCount;
-        private Point _exitPoint;
         private Cell[] _cells;
 
         // Constructor
